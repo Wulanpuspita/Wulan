@@ -11,19 +11,11 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 </head>
-
-
 <body>
-
 <div class="container" style="margin-top: 50px">
-
    <div class="col-md-8 col-md-offset-2">
-
       <div class="panel panel-default">
-
           <div class="panel-heading">Login</div>
-
-
           <div class="panel-body">
 
               <form class="form-horizontal" method="POST" action="{{ route('myCaptcha.post') }}">
