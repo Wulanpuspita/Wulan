@@ -2,32 +2,35 @@
 
 @section('content')
 
-</br></br></br></br>
-    
-<div class="container" style="margin-top:40px">
-    <div class="row">
-        <div class="col-md-9">
-              <div class="panel panel-default">
-               <div class="panel-body">
-                <div class="post-detail">
-                  @foreach($galeri as $item)
-                  <h3>{!! $item->nama !!}</h3>
-                  <h3>{!! $item->keterangan !!}</h3>
-                  
-                    <div class="info-meta">
-                        <ul class="list-inline">
-                            <li><i class="fa fa-clock-o"></i> {!! $item->created_at!!}</li>
-                            <li><i class="fa fa-user"></i> {!! $item->users_id !!}</li>
-                            <li class="pull-right">{!! $item->kategori_galeri_id !!}</li>
-                        </ul>
-                    </div>
-                    <div class="info-meta">{!! $item->isi !!}</div>
-                    @endforeach
-                  </div>
-               </div>
-            </div>
-         </div>   
-</div>
-</div>  
-</div>   
+<body> 
+<a href="{!! route('galeri.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+        <table border= "1">
+        <tr> 
+        <td>id </td>
+        <td>nama</td>
+        <td>keterangan</td>
+        <td>path</td>
+        <td>aksi</td>
+        </tr>
+
+        @foreach($galeri as $item)
+
+        <tr>
+
+        <td> {!! $item ->id !!}</td>
+        <td> {!! $item ->nama !!}</td>
+        <td> {!! $item ->keterangan !!}</td>
+        <td> {!! $item ->path !!}</td>
+        <td>
+        <a href="{!! route('galeri.show',[$item->id]) !!}" 
+        class="btn btn-succes">
+        Lihat</a>
+
+        </tr>
+
+        @endforeach
+    </table>
+</body>
+
 @endsection

@@ -2,31 +2,33 @@
 
 @section('content')
 
-</br></br></br></br>
-    
-<div class="container" style="margin-top:40px">
-    <div class="row">
-        <div class="col-md-9">
-              <div class="panel panel-default">
-               <div class="panel-body">
-                <div class="post-detail">
-                  @foreach($pengumuman as $item)
-                  <h3>{!! $item->judul !!}</h3>
-                  
-                    <div class="info-meta">
-                        <ul class="list-inline">
-                            <li><i class="fa fa-clock-o"></i> {!! $item->created_at!!}</li>
-                            <li><i class="fa fa-user"></i> {!! $item->users_id !!}</li>
-                            <li class="pull-right">{!! $item->kategori_pengumuman_id !!}</li>
-                        </ul>
-                    </div>
-                    <div class="info-meta">{!! $item->isi !!}</div>
-                    @endforeach
-                  </div>
-               </div>
-            </div>
-         </div>   
-</div>
-</div>  
-</div>   
+<body> 
+<a href="{!! route('pengumuman.create') !!}" class="btn btn-primary">Tambah Data</a>
+
+        <table border= "1">
+        <tr> 
+        <td>judul</td>
+        <td>isi</td>
+        <td>users_id</td>
+        <td>aksi</td>
+        </tr>
+
+        @foreach($pengumuman as $item)
+
+        <tr>
+
+        <td> {!! $item ->judul !!}</td>
+        <td> {!! $item ->isi !!}</td>
+        <td> {!! $item ->users_id !!}</td>
+        <td>
+        <a href="{!! route('pengumuman.show',[$item->id]) !!}" 
+        class="btn btn-succes">
+        Lihat</a>
+
+        </tr>
+
+        @endforeach
+    </table>
+</body>
+
 @endsection
