@@ -8,7 +8,9 @@
 		    <div class=card>
 			    <div class="card-header">Tambah Kategori Galeri</div>
 			         <div class="card-body">
-			            <form method="post" action="{!! route('kategori_galeri.store') !!}">@include('kategori_galeri.form')
+			            {!! Form::model($kategori_galeri, ['route' => ['kategori_galeri.update', $kategori_galeri->id], 'method'=>'patch']) !!}
+			            @include('kategori_galeri.form')
+			            {!! Form::close() !!}
 			            </form>
 		        </div>
 	       </div>

@@ -7,9 +7,11 @@
 		<div class="col-md-8">
 		    <div class=card>
 			    <div class="card-header">Tambah Kategori Artikel</div>
+			         
 			         <div class="card-body">
-			            <form method="post" action="{!! route('kategori_artikel.store') !!}">
+			            {!! Form::model($kategori_artikel, ['route' => ['kategori_artikel.update', $kategori_artikel->id], 'method'=>'patch']) !!}
 			            @include('kategori_artikel.form')
+			            {!! Form::close() !!}
 			            </form>
 		        </div>
 	       </div>

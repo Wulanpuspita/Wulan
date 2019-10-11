@@ -8,7 +8,9 @@
 		    <div class=card>
 			    <div class="card-header">Tambah Kategori Pengumuman</div>
 			         <div class="card-body">
-			            <form method="post" action="{!! route('kategori_pengumuman.store') !!}">@include('kategori_pengumuman.form')
+			            {!! Form::model($kategori_pengumuman, ['route' => ['kategori_pengumuman.update', $kategori_pengumuman->id], 'method'=>'patch']) !!}
+			            @include('kategori_pengumuman.form')
+			            {!! Form::close() !!}
 			            </form>
 		        </div>
 	       </div>
